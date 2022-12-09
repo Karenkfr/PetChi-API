@@ -1,0 +1,33 @@
+{
+  "name": "petchi-api",
+  "version": "1.0.0",
+  "description": "Projeto final reprograma",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "swagger-autogen": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karenkfr/PetChi-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karenkfr/PetChi-API/issues"
+  },
+  "homepage": "https://github.com/Karenkfr/PetChi-API#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.20",
+    "swagger": "^0.0.1",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "mongoose": "^6.8.0"
+  }
+}
