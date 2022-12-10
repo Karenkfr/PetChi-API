@@ -9,6 +9,4 @@ router.patch("/:id", controller.editarClienteById)
 router.delete("/:id", controller.deletarCliente)
 
 
-
-
 module.exports = router;

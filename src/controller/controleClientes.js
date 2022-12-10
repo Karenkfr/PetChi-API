@@ -15,7 +15,8 @@ const todosClientes = async (req, res) => {
 const clienteID = async (req, res) => {
     try {
         const { id } = req.params;
-        const encontrarCliente = await todosClientes.findByID(id);
+
+        const encontrarCliente = await controleClientes.findByID(id);
         if (!encontrarCliente.length) {
             return res.status(404).json({ message: "ID inexistente" })
         }
@@ -28,14 +29,20 @@ const clienteID = async (req, res) => {
 const addCliente = async (req, res) => {
     try {
         const {
-            cliente,
+            nome,
+            especie,
+            porte,
+            raca,
             procedimento,
             data_procedimento,
             valorProcedimento
-        } = req.params
+        } = req.body
 
         const novoCliente = new controleClientes({
-            cliente,
+            nome,
+            especie,
+            porte,
+            raca,
             procedimento,
             data_procedimento,
             valorProcedimento
@@ -43,9 +50,9 @@ const addCliente = async (req, res) => {
 
         const salvarCliente = await novoCliente.save();
 
-        res.status(200).json({ message: "Novo cliente adicionado com sucesso" })
+        res.status(200).json({ message: "Novo cliente adicionado com sucesso", salvarCliente})
     } catch (error) {
-        res.status(500).json({ message: "Falha ao adicionar o cliente" })
+        res.status(500).json({ message: error.message })
 
     };
 };
@@ -53,6 +60,10 @@ const addCliente = async (req, res) => {
 const editarClienteById = async (req, res) => {
     try {
         const {
+            nome,
+            especie,
+            porte,
+            raca,
             procedimento,
             data_procedimento,
             valorProcedimento
@@ -61,13 +72,17 @@ const editarClienteById = async (req, res) => {
         const clienteEditar = await controleClientes.findByIdAndUpdate(
             req.params.id,
             {
+                nome,
+                especie,
+                porte,
+                raca,
                 procedimento,
                 data_procedimento,
                 valorProcedimento
             }
         )
 
-        res.status(200).json({ message: "Edição no cadastro realizada com sucesso" })
+        res.status(200).json({ message: "Edição no cadastro realizada com sucesso", clienteEditar })
 
     } catch (error) {
         res.status(500).json({ message: "Falha na edição do cadastro" })
@@ -76,7 +91,7 @@ const editarClienteById = async (req, res) => {
 
 const deletarCliente = async (req, res) => {
     try {
-        const { id } = req.params
+        const { id } = req.body
         const procurarCliente = await controleClientes.findByID(id);
 
         if (procurarCliente == null) {
