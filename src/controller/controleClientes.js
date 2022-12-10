@@ -1,4 +1,6 @@
 const controleClientes = require("../model/clientes")
+const SECRET = process.env.SECRET
+const jwt = require("jsonwebtoken")
 
 
 const todosClientes = async (req, res) => {
@@ -23,11 +25,10 @@ const clienteID = async (req, res) => {
     }
 }
 
-const addCliente = async (req,res) => {
-
+const addCliente = async (req, res) => {
     try {
-        const  {
-            cliente, 
+        const {
+            cliente,
             procedimento,
             data_procedimento,
             valorProcedimento
@@ -42,16 +43,15 @@ const addCliente = async (req,res) => {
 
         const salvarCliente = await novoCliente.save();
 
-        res.status(200).json({message: "Novo cliente adicionado com sucesso"})
+        res.status(200).json({ message: "Novo cliente adicionado com sucesso" })
     } catch (error) {
-        res.status(500).json({message: "Falha ao adicionar o cliente"})
-        
+        res.status(500).json({ message: "Falha ao adicionar o cliente" })
+
     };
 };
 
-const editarClienteById = async(req,res) => {
+const editarClienteById = async (req, res) => {
     try {
-
         const {
             procedimento,
             data_procedimento,
@@ -59,7 +59,7 @@ const editarClienteById = async(req,res) => {
         } = req.body;
 
         const clienteEditar = await controleClientes.findByIdAndUpdate(
-            req.params.id, 
+            req.params.id,
             {
                 procedimento,
                 data_procedimento,
@@ -67,25 +67,25 @@ const editarClienteById = async(req,res) => {
             }
         )
 
-        res.status(200).json({message: "Edição no cadastro realizada com sucesso"})
-       
+        res.status(200).json({ message: "Edição no cadastro realizada com sucesso" })
+
     } catch (error) {
-        res.status(500).json({message: "Falha na edição do cadastro"})
+        res.status(500).json({ message: "Falha na edição do cadastro" })
     }
 }
 
-const deletarCliente = async (req,res) => {
+const deletarCliente = async (req, res) => {
     try {
         const { id } = req.params
         const procurarCliente = await controleClientes.findByID(id);
 
         if (procurarCliente == null) {
-            return res.status(404).json({message: `O cliente com id ${id} não foi encontrado`})
+            return res.status(404).json({ message: `O cliente com id ${id} não foi encontrado` })
         }
         await procurarCliente.remove();
-        res.status(200).json({message: `o cliente com id ${id} foi deletado com sucesso`})
+        res.status(200).json({ message: `o cliente com id ${id} foi deletado com sucesso` })
     } catch (error) {
-        res.status(500).json({message: error.message})
+        res.status(500).json({ message: error.message })
     }
 }
 

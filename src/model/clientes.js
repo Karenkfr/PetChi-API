@@ -1,6 +1,5 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const mongoose = require("mongoose")
+const model = require("../model/clientes.js")
 const clientesPet = new mongoose.Schema({
 
     _id: {
@@ -38,7 +37,7 @@ const clientesPet = new mongoose.Schema({
         },
 
         data_procedimento: {
-            type: moment().format('DD/MM/YYYY'),
+            type: Date,
             require: true
         },
 
@@ -49,4 +48,6 @@ const clientesPet = new mongoose.Schema({
     }
 })
 
-const Model = mongoose.Model("estetica", clientesPet )
+const Model = mongoose.model("estetica", clientesPet )
+
+module.exports = Model
