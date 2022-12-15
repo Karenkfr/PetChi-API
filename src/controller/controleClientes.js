@@ -1,11 +1,11 @@
-const controleClientes = require("../model/clientes")
+const ControleClientes = require("../model/clientes")
 const SECRET = process.env.SECRET
 const jwt = require("jsonwebtoken")
 
 
 const todosClientes = async (req, res) => {
     try {
-        const allClientes = await controleClientes.find({}, null);
+        const allClientes = await ControleClientes.find({}, null);
         res.status(200).json(allClientes)
     } catch {
         res.status(500).json({ message: error.message })
@@ -16,8 +16,8 @@ const clienteID = async (req, res) => {
     try {
         const { id } = req.params;
 
-        const encontrarCliente = await controleClientes.findByID(id);
-        if (!encontrarCliente.length) {
+        const encontrarCliente = await ControleClientes.findById(id);
+        if (!encontrarCliente) {
             return res.status(404).json({ message: "ID inexistente" })
         }
         res.status(200).json(encontrarCliente)
@@ -38,7 +38,7 @@ const addCliente = async (req, res) => {
             valorProcedimento
         } = req.body
 
-        const novoCliente = new controleClientes({
+        const novoCliente = new  ControleClientes({
             nome,
             especie,
             porte,
@@ -69,7 +69,7 @@ const editarClienteById = async (req, res) => {
             valorProcedimento
         } = req.body;
 
-        const clienteEditar = await controleClientes.findByIdAndUpdate(
+        const clienteEditar = await ControleClientes.findByIdAndUpdate(
             req.params.id,
             {
                 nome,
@@ -91,13 +91,12 @@ const editarClienteById = async (req, res) => {
 
 const deletarCliente = async (req, res) => {
     try {
-        const { id } = req.body
-        const procurarCliente = await controleClientes.findByID(id);
+        const { id } = req.params
+        const procurarCliente = await ControleClientes.findByIdAndDelete(id);
 
         if (procurarCliente == null) {
             return res.status(404).json({ message: `O cliente com id ${id} não foi encontrado` })
         }
-        await procurarCliente.remove();
         res.status(200).json({ message: `o cliente com id ${id} foi deletado com sucesso` })
     } catch (error) {
         res.status(500).json({ message: error.message })
