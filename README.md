@@ -1,9 +1,8 @@
 # Projeto Final {reprograma} | Karen Ferraz Ribeiro
 # PetChi - API de cadastro de cliente para uma estética animal
 
-<p align="center">
-    <img width="250" src="https://drive.google.com/file/d/12aPA3kak-ZDLomZM03QI4pACeDtmbbeH/view?usp=share_link" alt="Logo PetChi API">
-</p>
+
+![Petchi](https://user-images.githubusercontent.com/101227284/207957374-29d52852-5f2c-4b53-8d8a-d5f6d6fb1893.png)
 
 O projeto **PetChi API** desenvolvido por **Karen Ribeiro** é uma API que realiza um CRUD e armazena os dados no banco de dados MongoAtlas.
 
@@ -98,15 +97,15 @@ Assim que notado algum tipo de maus tratos no animal, a esteticista terá contat
 
 <br>
 
-## 🫂 **Agradecimentos:**
+## :clap: **Agradecimentos:**
 
 <br>
 
- - Quero agradecer ao projeto {reprograma} que fez a minha vida mudar completamente! o nível de aprendizado que tive foi muito além do esperado, o programa conta com professoras que possuem uma bagagem de conhecimento imensa, o ambiente é acolhedor e toda equipe é muito prestativa e nos auxilia no que precisarmos :purple_heart:
+Quero agradecer ao projeto {reprograma} que fez a minha vida mudar completamente! o nível de aprendizado que tive foi muito além do esperado, o programa conta com professoras que possuem uma bagagem de conhecimento imensa, o ambiente é acolhedor e toda equipe é muito prestativa e nos auxilia no que precisarmos :purple_heart:
 <br>
- - Agradeço também as minhas colegas de classe que muito me ajudaram em todo o curso! eu nunca mais vou esquecer da corrente do bem que criamos na turma, onde uma não soltou a mão da outra, onde nos mantemos unidas o curso inteiro. Obrigada, gurias! :purple_heart: 
+Agradeço também as minhas colegas de classe que muito me ajudaram em todo o curso! eu nunca mais vou esquecer da corrente do bem que criamos na turma, onde uma não soltou a mão da outra, onde nos mantemos unidas o curso inteiro. Obrigada, gurias! :purple_heart: 
 <br>
- - Deus. Ah sim, vai ter agradecimento a ele também! agradeço a Deus por ter virado minha vida de ponta cabeça para que eu pudesse me tornar uma desenvolvedora. Sou grata pela minha nova profissão, por amar meu trabalho e por ter me destinado uma carreira que é a minha cara :purple_heart:
+Deus. Ah sim, vai ter agradecimento a ele também! agradeço a Deus por ter virado minha vida de ponta cabeça para que eu pudesse me tornar uma desenvolvedora. Sou grata pela minha nova profissão, por amar meu trabalho e por ter me destinado uma carreira que é a minha cara :purple_heart:
 <br>
 O conhecimento e a bagagem que adquiri em 4 meses do curso foi fundamental para a criação desse projeto.
 <br>
@@ -117,11 +116,11 @@ Agradeço do fundo do meu ❤️ a todas as pessoas envolvidas na iniciativa,sem
 <br>
 <br>
 
+<center height="200px">
 
-<p align="center">
-    <img width="400" src="https://giphy.com/gifs/beyonce-confidence-empower-C3QniXVwzvwze" alt="Beyoncé - Run the world">
-</p>
+![](https://media.tenor.com/gC2ceUvRQEMAAAAC/who-run-the-world-girls-beyonce.gif)
 
+</center>
 <br>
 
 
