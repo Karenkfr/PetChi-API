@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const model = require("../model/clientes.js")
 
 const ClientesPet = new mongoose.Schema({
 
