@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-const model = require("../model/clientes.js")
-const clientesPet = new mongoose.Schema({
+
+const ClientesPet = new mongoose.Schema({
 
     _id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -42,6 +42,6 @@ const clientesPet = new mongoose.Schema({
     }
 })
 
-const Model = mongoose.model("estetica", clientesPet)
+const Model = mongoose.model("estetica", ClientesPet)
 
 module.exports = Model
