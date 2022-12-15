@@ -3,9 +3,9 @@ const express = require("express")
 const router = express.Router()
 
 router.get("/todos", controller.todosClientes)
-router.get("/:id", controller.clienteID)
+router.get("/cliente/:id", controller.clienteID)
 router.post("/novo", controller.addCliente)
-router.patch("/:id", controller.editarClienteById)
-router.delete("/:id", controller.deletarCliente)
+router.patch("/cliente/:id", controller.editarClienteById)
+router.delete("/cliente/:id", controller.deletarCliente)
 
 module.exports = router;
